@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Student Survival Guide | AdZU</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">Survival Guide <span>| AdZU</span></a>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pages/map.html">Campus Map</a></li>
+        <li><a href="pages/guides.html">Guides & FAQs</a></li>
+        <li><a href="pages/cafeteria.html">Cafeteria & Orgs</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <div class="user-actions">
+      <a href="#login-section" class="btn-login-nav">Log In</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Your Ultimate AdZU Campus Survival Guide</h1>
+        <p>Easily locate classrooms and study spots, follow step-by-step enrollment and clearance procedures, search handbook FAQs, and check cafeteria menus.</p>
+        <div class="hero-btns">
+          <a href="pages/map.html" class="btn btn-primary">Explore Campus Map</a>
+          <a href="#login-section" class="btn btn-secondary">Log In Portal</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <h2 class="section-title">Survival Hub at a Glance</h2>
+      <div class="stats-bar">
+        <div class="stat-card">
+          <h3>10+</h3>
+          <p>Campus Facilities & Study Spots</p>
+        </div>
+        <div class="stat-card">
+          <h3>100%</h3>
+          <p>Digital Clearance & Enrollment Guides</p>
+        </div>
+        <div class="stat-card">
+          <h3>8+</h3>
+          <p>College Departments & Orgs</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="about">
+      <h2 class="section-title">How The Survival Guide Helps You</h2>
+      <div class="features-grid">
+        <div class="feature-box">
+          <h3>1. Campus Navigation</h3>
+          <p>Locate classrooms, offices, facilities, and quiet study areas around the AdZU campus hassle-free.</p>
+        </div>
+        <div class="feature-box">
+          <h3>2. Step-by-Step Guides</h3>
+          <p>Get simple, visual walk-throughs for enrollment, clearance procedures, and student portal access.</p>
+        </div>
+        <div class="feature-box">
+          <h3>3. Rules & Food Options</h3>
+          <p>Search handbook & Magna Carta FAQs, explore campus organizations, and view daily cafeteria stall menus.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-orgs">
+      <h2 class="section-title">Core Survival Modules</h2>
+      <div class="card-grid">
+        <div class="card">
+          <span class="badge">Navigation</span>
+          <h3>Campus Map & Locator</h3>
+          <p>Interactive directory to help freshmen locate buildings, offices, classrooms, and study hubs.</p>
+          <a href="pages/map.html" class="card-link">View Map &rarr;</a>
+        </div>
+
+        <div class="card">
+          <span class="badge">Procedures</span>
+          <h3>Enrollment & Clearance</h3>
+          <p>Clear step-by-step instructions to navigate semester registration, clearance sign-offs, and portal usage.</p>
+          <a href="pages/guides.html" class="card-link">Read Guides &rarr;</a>
+        </div>
+
+        <div class="card">
+          <span class="badge">Policy</span>
+          <h3>Handbook & Magna Carta FAQs</h3>
+          <p>Quick answers to essential school policies, student rights, and campus regulations.</p>
+          <a href="pages/guides.html" class="card-link">Search FAQs &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="upcoming-events">
+      <h2 class="section-title">Student Life & Dining</h2>
+      <div class="card-grid">
+        <div class="card">
+          <span class="badge">Dining</span>
+          <h3>Cafeteria Stalls & Menus</h3>
+          <p>Check available meal options, snack stalls, and prices on campus before heading out for lunch.</p>
+          <a href="pages/cafeteria.html" class="card-link">View Menus &rarr;</a>
+        </div>
+
+        <div class="card">
+          <span class="badge">Community</span>
+          <h3>Departments & Organizations</h3>
+          <p>Explore academic and non-academic student organizations you can join to enrich your college life.</p>
+          <a href="pages/cafeteria.html" class="card-link">Explore Groups &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="login-section" class="login-section">
+      <div class="login-card">
+        <h2>Portal Login</h2>
+        
+        <div class="form-group">
+          <label for="role">Select Your Role:</label>
+          <select id="role" name="role" required>
+            <option value="student">First-Year / General Student</option>
+            <option value="officer">Org Officer / Student Leader</option>
+            <option value="admin">Admin / Faculty</option>
+          </select>
+        </div>
+
+        <div id="g_id_onload"
+             data-client_id="1050149155761-chvo5pleel48ml6h03vdg6im9fmtr6fg.apps.googleusercontent.com"
+             data-callback="handleCredentialResponse"
+             data-auto_prompt="false"
+             data-hosted_domain="adzu.edu.ph">
+        </div>
+
+        <div class="g_id_signin"
+             data-type="standard"
+             data-size="large"
+             data-theme="outline"
+             data-text="sign_in_with"
+             data-shape="rectangular"
+             data-logo_alignment="left">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Campus Survival Guide</h4>
+        <p>An official freshman onboarding portal for Ateneo de Zamboanga University students.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/map.html">Campus Map</a></li>
+          <li><a href="pages/guides.html">Enrollment & Clearance</a></li>
+          <li><a href="pages/cafeteria.html">Cafeteria & Menus</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>University Information</h4>
+        <p>Ateneo de Zamboanga University</p>
+        <p>La Purisima St., Zamboanga City</p>
+        <p>Developed by MAFIAH Team</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2026 Campus Student Survival Guide | AdZU Web Programming Project</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
