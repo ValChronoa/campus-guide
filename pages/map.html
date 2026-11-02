@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Map & Locator | AdZU Survival Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <a href="../index.html">Survival Guide <span>| AdZU</span></a>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="map.html">Campus Map</a></li>
+        <li><a href="guides.html">Guides & FAQs</a></li>
+        <li><a href="cafeteria.html">Cafeteria & Orgs</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="map-page-container">
+    
+    <aside class="map-sidebar">
+      <h2>Campus Locator</h2>
+      
+      <div class="form-group">
+        <label for="mapSearch">Search Location</label>
+        <input type="text" id="mapSearch" placeholder="Search building, office, or room...">
+      </div>
+
+      <div class="form-group">
+        <label for="categorySelect">Filter Category</label>
+        <select id="categorySelect">
+          <option value="all">All Categories</option>
+          <option value="classroom">Classrooms</option>
+          <option value="office">Administrative Offices</option>
+          <option value="study">Quiet Study Areas</option>
+          <option value="facility">Facilities & Restrooms</option>
+        </select>
+      </div>
+
+      <div id="locationList" class="location-list">
+      </div>
+    </aside>
+
+    <section class="map-view-section">
+      <div class="map-wrapper">
+        <img src="../images/campus-map-preview.jpg" alt="AdZU Campus Map" id="campusMapImage">
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../js/map.js"></script>
+</body>
+</html>

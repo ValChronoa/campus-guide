@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafeteria & Student Orgs | AdZU Survival Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <a href="../index.html">Survival Guide <span>| AdZU</span></a>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="map.html">Campus Map</a></li>
+        <li><a href="guides.html">Guides & FAQs</a></li>
+        <li><a href="cafeteria.html">Cafeteria & Orgs</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="cafeteria-page-container">
+    
+    <!-- Tab Navigation Bar -->
+    <div class="view-toggle-bar">
+      <button id="tabBtnCaf" class="tab-btn active" onclick="switchTab('cafeteria')">Cafeteria Stalls</button>
+      <button id="tabBtnOrgs" class="tab-btn" onclick="switchTab('orgs')">Student Organizations</button>
+      <button id="tabBtnAll" class="tab-btn" onclick="switchTab('all')">Show Both</button>
+    </div>
+
+    <!-- Cafeteria Section -->
+    <section id="cafeteriaSection" class="section-block">
+      <div class="section-header">
+        <h2>Campus Cafeteria Stalls & Menus</h2>
+        <p>Explore food stalls, floor locations, and daily meal options on campus.</p>
+      </div>
+
+      <div class="filter-row">
+        <div class="form-group">
+          <label for="cafSearch">Search Stalls or Food</label>
+          <input type="text" id="cafSearch" placeholder="Search dish, stall name, or floor...">
+        </div>
+
+        <div class="form-group">
+          <label for="cafCategory">Filter Floor Level</label>
+          <select id="cafCategory">
+            <option value="all">All Floors</option>
+            <option value="firstfloor">1st Floor</option>
+            <option value="secondfloor">2nd Floor</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="cafeteriaList" class="card-grid"></div>
+    </section>
+
+    <!-- Organizations Section -->
+    <section id="orgsSection" class="section-block" style="display: none;">
+      <div class="section-header">
+        <h2>Accredited Student Organizations</h2>
+        <p>Find academic, civic, aesthetic, and religious student groups you can join.</p>
+      </div>
+
+      <div class="filter-row">
+        <div class="form-group">
+          <label for="orgSearch">Search Organizations</label>
+          <input type="text" id="orgSearch" placeholder="Search organization name or topic...">
+        </div>
+
+        <div class="form-group">
+          <label for="orgCategory">Filter Sector</label>
+          <select id="orgCategory">
+            <option value="all">All Sectors</option>
+            <option value="student_govt">Student Government</option>
+            <option value="academic">Academic Organizations</option>
+            <option value="aesthetic">Culture, Arts & Multimedia</option>
+            <option value="religious">Faith & Formation Cluster</option>
+            <option value="civic">Socio-Civic & Political</option>
+            <option value="wellness">Wellness & Environmental</option>
+            <option value="pubcom">Publications & Communications</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="orgsList" class="card-grid"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="copyright">
+      <p>&copy; 2026 Campus Student Survival Guide | AdZU Web Programming Project</p>
+    </div>
+  </footer>
+
+  <script src="../js/cafeteria.js"></script>
+</body>
+</html>
