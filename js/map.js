@@ -3,6 +3,7 @@ var locations = [
   {
     name: "College Admissions and Aid Office",
     category: "office",
+    categoryLabel: "Administrative Office",
     building: "Bellarmine Hall (1st Floor)",
     description: "Handles student admission confirmation, CET verification, and scholarships.",
     image1: "../images/locations/admissions-1.jpg",
@@ -11,6 +12,7 @@ var locations = [
   {
     name: "College Registrar's Office",
     category: "office",
+    categoryLabel: "Administrative Office",
     building: "Gonzaga Hall (1st Floor)",
     description: "Main window for subject evaluations, schedule assessment (C104 D Window), and scholar forms.",
     image1: "../images/locations/registrar-1.jpg",
@@ -19,6 +21,7 @@ var locations = [
   {
     name: "Finance Office",
     category: "office",
+    categoryLabel: "Administrative Office",
     building: "Learning Resource Center (1st Floor)",
     description: "Handles fee assessments, tuition validation, and account payments.",
     image1: "../images/locations/finance-1.jpg",
@@ -27,6 +30,7 @@ var locations = [
   {
     name: "Office of Student Affairs (OSA)",
     category: "office",
+    categoryLabel: "Administrative Office",
     building: "Canisius-Gonzaga Building (1st Floor)",
     description: "Manages student ID processing, clearance sign-offs, and student organization accreditation.",
     image1: "../images/locations/osa-1.jpg",
@@ -35,6 +39,7 @@ var locations = [
   {
     name: "University Infirmary",
     category: "office",
+    categoryLabel: "Administrative Office",
     building: "Bellarmine-Campion Building (1st Floor)",
     description: "Provides medical and dental health procedures for student onboarding and medical clearance.",
     image1: "../images/locations/infirmary-1.jpg",
@@ -43,6 +48,7 @@ var locations = [
   {
     name: "CSITE Workroom",
     category: "office",
+    categoryLabel: "Faculty Workroom",
     building: "Canisius-Gonzaga Building (2nd Floor)",
     description: "Faculty workroom for Computer Science, Information Technology, and Engineering faculty.",
     image1: "../images/locations/csite-1.jpg",
@@ -53,6 +59,7 @@ var locations = [
   {
     name: "Basic & Advanced Computer Laboratories",
     category: "facility",
+    categoryLabel: "Campus Facility",
     building: "Canisius-Gonzaga Building (3rd Floor)",
     description: "Equipped PC suites for CS/IT programming classes, practical exams, and software labs.",
     image1: "../images/locations/complab-1.jpg",
@@ -61,6 +68,7 @@ var locations = [
   {
     name: "Animation Laboratory",
     category: "facility",
+    categoryLabel: "Campus Facility",
     building: "Canisius-Gonzaga Building (2nd Floor)",
     description: "Specialized multimedia workstation lab for digital design and animation classes.",
     image1: "../images/locations/anim-1.jpg",
@@ -69,6 +77,7 @@ var locations = [
   {
     name: "Multi-Purpose Covered Courts 1 & 2",
     category: "facility",
+    categoryLabel: "Campus Facility",
     building: "Campus Sports Complex",
     description: "Venues for physical education classes, athletic meets, and major university assemblies.",
     image1: "../images/locations/mpcc-1.jpg",
@@ -79,6 +88,7 @@ var locations = [
   {
     name: "College Library",
     category: "study",
+    categoryLabel: "Quiet Study Area",
     building: "Learning Resource Center (2nd Floor)",
     description: "Main quiet study zone, research PC terminals, airconditioned reading rooms, and book stacks.",
     image1: "../images/locations/library-1.jpg",
@@ -87,6 +97,7 @@ var locations = [
   {
     name: "Backfield Kiosks & Benches",
     category: "study",
+    categoryLabel: "Quiet Study Area",
     building: "Campus Backfield",
     description: "Open-air shaded kiosks for group study sessions, student meetings, and relaxation.",
     image1: "../images/locations/backfield-1.jpg",
@@ -95,6 +106,7 @@ var locations = [
   {
     name: "Sauras Extension Benches & Kiosks",
     category: "study",
+    categoryLabel: "Quiet Study Area",
     building: "Sauras Hall Grounds",
     description: "Outdoor seating area adjacent to the campus cafeteria for quick reviews and dining.",
     image1: "../images/locations/sauras-ext-1.jpg",
@@ -121,8 +133,9 @@ function showLocations() {
     var matchesCategory = (categoryInput === "all") || (loc.category === categoryInput);
 
     if (matchesSearch && matchesCategory) {
-      htmlContent += '<div class="location-card">';
-      htmlContent += '  <h4>' + loc.name + '</h4>';
+      htmlContent += '<div class="card">';
+      htmlContent += '  <span class="badge">' + loc.categoryLabel + '</span>';
+      htmlContent += '  <h3>' + loc.name + '</h3>';
       htmlContent += '  <p><strong>Location:</strong> ' + loc.building + '</p>';
       htmlContent += '  <p>' + loc.description + '</p>';
       htmlContent += '  <div class="location-images">';
@@ -140,7 +153,7 @@ function showLocations() {
   }
 
   if (htmlContent === "") {
-    container.innerHTML = '<p style="font-size: 13px; color: #888;">No locations found.</p>';
+    container.innerHTML = '<p style="font-size: 14px; color: #888;">No locations found matching your search.</p>';
   } else {
     container.innerHTML = htmlContent;
   }
@@ -154,4 +167,29 @@ window.onload = function() {
 
   if (searchElem) searchElem.addEventListener("keyup", showLocations);
   if (categoryElem) categoryElem.addEventListener("change", showLocations);
+
+  var mapImg = document.getElementById("campusMapImage");
+  var btnExpand = document.getElementById("btnExpandMap");
+  var modal = document.getElementById("mapModal");
+  var btnClose = document.getElementById("btnCloseModal");
+
+  function openMapModal() {
+    if (modal) modal.style.display = "block";
+  }
+
+  function closeMapModal() {
+    if (modal) modal.style.display = "none";
+  }
+
+  if (mapImg) mapImg.addEventListener("click", openMapModal);
+  if (btnExpand) btnExpand.addEventListener("click", openMapModal);
+  if (btnClose) btnClose.addEventListener("click", closeMapModal);
+
+  if (modal) {
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal || e.target.className === "modal-content-wrapper") {
+        closeMapModal();
+      }
+    });
+  }
 };
