@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Map & Locator | AdZU Survival Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <a href="../index.html">Survival Guide <span>| AdZU</span></a>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="map.html">Campus Map</a></li>
+        <li><a href="guides.html">Guides & FAQs</a></li>
+        <li><a href="cafeteria.html">Cafeteria & Orgs</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="map-page-container">
+    
+    <section class="map-controls-section">
+      <div class="section-header">
+        <h2>Campus Facilities & Office Directory</h2>
+        <p>Search for classrooms, administrative offices, study zones, and facilities around campus.</p>
+      </div>
+
+      <div class="filter-row">
+        <div class="form-group">
+          <label for="mapSearch">Search Location</label>
+          <input type="text" id="mapSearch" placeholder="Search building, office, or room name...">
+        </div>
+
+        <div class="form-group">
+          <label for="categorySelect">Filter Category</label>
+          <select id="categorySelect">
+            <option value="all">All Categories</option>
+            <option value="office">Administrative Offices</option>
+            <option value="facility">Facilities & Labs</option>
+            <option value="study">Quiet Study Areas</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="locationList" class="card-grid"></div>
+    </section>
+
+    <section class="map-view-section">
+      <div class="map-header-bar">
+        <h3>Detailed AdZU Campus Map & Legend</h3>
+        <button id="btnExpandMap" class="btn-map-control">Expand Fullscreen</button>
+      </div>
+      
+      <div class="map-wrapper" id="mapWrapper">
+        <img src="../images/campus-map-preview.jpg" alt="Detailed AdZU Campus Map" id="campusMapImage">
+      </div>
+    </section>
+
+  </main>
+
+  <div id="mapModal" class="map-modal">
+    <span class="close-modal" id="btnCloseModal">&times;</span>
+    <div class="modal-content-wrapper">
+      <img id="modalMapImg" src="../images/campus-map-preview.jpg" alt="Expanded Campus Map">
+    </div>
+  </div>
+
+  <footer>
+    <div class="copyright">
+      <p>&copy; 2026 Campus Student Survival Guide | AdZU Web Programming Project</p>
+    </div>
+  </footer>
+
+  <script src="../js/map.js"></script>
+</body>
+</html>
